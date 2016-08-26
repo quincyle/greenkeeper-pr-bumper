@@ -12,6 +12,10 @@
   })
   // /repos/:owner/:repo/pulls/:number
   handler.on('pull_request', function (event) {
+    console.log('1')
+    console.log(process.env.SECRET)
+    console.log(process.env.PORT)
+    console.log('2')
     console.log('Request Type: ', event.payload.action)
     if (event.payload.action !== 'opened')
       return
